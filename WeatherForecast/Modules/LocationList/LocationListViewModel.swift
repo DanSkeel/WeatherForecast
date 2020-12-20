@@ -31,6 +31,10 @@ final class LocationListViewModel: ObservableObject {
             .store(in: &cancellables)
     }
     
+    func deleteItems(for indexSet: IndexSet) {
+        model.deleteLocations(for: indexSet)
+    }
+    
     func detailViewModel(at index: Int) -> LocationForecastViewModel? {
         detailViewBuilder.buildViewModel(for: model.location(at: index))
     }

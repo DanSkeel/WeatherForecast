@@ -21,4 +21,8 @@ final class LocationListModel {
     func location(at index: Int) -> Location {
         locations[index]
     }
+    
+    func deleteLocations(for indexSet: IndexSet) {
+        locations.remove(atOffsets: indexSet)
+    }
 }

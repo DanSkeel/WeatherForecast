@@ -15,7 +15,8 @@ struct LocationListView: View {
     var body: Body {
                 
         Body(state: viewModel.state,
-             detailViewMaker: { AnyView(makeDetailView(at: $0)) })
+             detailViewMaker: { AnyView(makeDetailView(at: $0)) },
+             deleteItems: { viewModel.deleteItems(for: $0) })
     }
 }
 
@@ -35,6 +36,7 @@ extension LocationListView {
         let state: State
         
         let detailViewMaker: (Int) -> AnyView
+        let deleteItems: (IndexSet) -> Void
         
         var body: some View {
             NavigationView {
@@ -61,6 +63,7 @@ private extension LocationListView.Body {
                     Text(item.name)
                 }
             }
+            .onDelete(perform: deleteItems)
         }
         .listStyle(PlainListStyle())
     }
@@ -68,12 +71,24 @@ private extension LocationListView.Body {
 
 struct LocationListViewBody_Previews: PreviewProvider {
     
+    typealias ViewState = LocationListView.Body.State
+    
     static var previews: some View {
-        LocationListView.Body(state: .init(title: "Weather",
-                                           items: .nonEmpty([
-                                            .init(id: UUID(), name: "Moscow"),
-                                            .init(id: UUID(), name: "Amsterdam"),
-                                           ])),
-                              detailViewMaker: { _ in AnyView(EmptyView()) })
+        Preview(items: [
+            .init(id: UUID(), name: "Moscow"),
+            .init(id: UUID(), name: "Amsterdam")
+        ])
+    }
+    
+    struct Preview: View {
+        
+        @State var items: [ViewState.Item]
+        
+        var body: some View {
+            LocationListView.Body(state: .init(title: "Weather",
+                                               items: .nonEmpty(items)),
+                                  detailViewMaker: { _ in AnyView(EmptyView()) },
+                                  deleteItems: { items.remove(atOffsets: $0) })
+        }
     }
 }
