@@ -10,12 +10,13 @@ import SwiftUI
 final class LocationForecastBuilder {
     
     func build(for viewModel: LocationForecastViewModel) -> some View {
-        #warning("Unimplemented")
         return LocationForecastView(viewModel: viewModel)
     }
     
     func buildViewModel(for location: Location) -> LocationForecastViewModel {
-        #warning("Unimplemented")
-        return .init()
+        
+        let api = OpenWeatherClient(networkClient: NetworkClient())
+        
+        return .init(model: LocationForecastModel(location: location, api: api))
     }
 }
