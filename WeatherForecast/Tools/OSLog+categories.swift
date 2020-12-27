@@ -14,4 +14,5 @@ extension OSLog {
 
     static let network = OSLog(subsystem: subsystem, category: "network")
     static let coreLocation = OSLog(subsystem: subsystem, category: "core location")
+    static let storage = OSLog(subsystem: subsystem, category: "storage")
 }

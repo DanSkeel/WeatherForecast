@@ -73,7 +73,7 @@ final class LocationPickerViewModel: ObservableObject, Identifiable {
               let name = pin.title else {
             return
         }
-        didSelectLocation(.init(coordinates: pin.coordinate, name: name))
+        didSelectLocation(.init(coordinate: pin.coordinate, name: name))
     }
 }
 

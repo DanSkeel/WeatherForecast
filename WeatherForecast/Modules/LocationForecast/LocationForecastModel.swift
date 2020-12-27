@@ -24,8 +24,8 @@ final class LocationForecastModel {
     }
     
     func forecastAnyPublisher() -> AnyPublisher<Forecast, Error> {
-        api.weather(latitude: location.coordinates.latitude,
-                    longitude: location.coordinates.longitude)
+        api.weather(latitude: location.coordinate.latitude,
+                    longitude: location.coordinate.longitude)
             .map { [api] response in
                 Self.forecast(for: response, from: api)
             }
