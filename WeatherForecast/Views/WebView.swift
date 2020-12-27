@@ -13,6 +13,8 @@ import WebKit
 
 struct WebView: UIViewRepresentable {
     
+    let url: URL
+    
     func makeCoordinator() -> Coordinator {
         Coordinator()
     }
@@ -32,9 +34,7 @@ struct WebView: UIViewRepresentable {
     }
     
     func updateUIView(_ webView: WKWebView, context: Context) {
-        if let url = Bundle.main.url(forResource: "Help", withExtension: "html") {
-            webView.loadFileURL(url, allowingReadAccessTo: url.deletingLastPathComponent())
-        }
+        webView.loadFileURL(url, allowingReadAccessTo: url.deletingLastPathComponent())
     }
     
     class Coordinator : NSObject, WKNavigationDelegate {

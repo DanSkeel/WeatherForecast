@@ -11,7 +11,7 @@ import SwiftUI
 final class HelpBuilder {
     
     func build() -> some View {
-        HelpView()
+        HelpView(viewModel: HelpViewModel())
     }
 }
 

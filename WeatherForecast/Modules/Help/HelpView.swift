@@ -10,8 +10,12 @@ import SwiftUI
 
 struct HelpView: View {
     
+    @ObservedObject var viewModel: HelpViewModel
+    
     var body: some View {
-        WebView()
-            .padding()
+        viewModel.url.map {
+            WebView(url: $0)
+                .padding()
+        }
     }
 }
