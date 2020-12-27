@@ -82,6 +82,7 @@ private extension LocationListView.BodyView {
     func emtpyList(text: String) -> some View {
         Text(text)
             .font(.largeTitle)
+            .padding()
             .multilineTextAlignment(.center)
     }
     
