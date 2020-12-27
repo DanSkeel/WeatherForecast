@@ -56,7 +56,8 @@ final class LocationPickerViewModel: ObservableObject, Identifiable {
                 return
             }
             
-            state.map.annotationItems = [.init(coordinate: coodinate, title: placemark.locality)]
+            let title = placemark.locality ?? placemark.name
+            state.map.annotationItems = [.init(coordinate: coodinate, title: title)]
             
             state.callToAction = .init(iconSystemName: "bookmark.fill", text: "Bookmark")
             self.didTapCallToAction = { [weak self] in self?.bookmarkSelectedLocation() }
