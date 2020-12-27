@@ -27,6 +27,9 @@
 		CF084C3625926018007A93B4 /* Units.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF084C3525926018007A93B4 /* Units.swift */; };
 		CF084C392594C0E3007A93B4 /* OSLog+categories.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF084C382594C0E3007A93B4 /* OSLog+categories.swift */; };
 		CF084C3E2594E235007A93B4 /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF084C3D2594E235007A93B4 /* ErrorView.swift */; };
+		CF084C452594EFB8007A93B4 /* LocationPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF084C442594EFB8007A93B4 /* LocationPickerView.swift */; };
+		CF084C492594F105007A93B4 /* LocationPickerView+State.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF084C482594F105007A93B4 /* LocationPickerView+State.swift */; };
+		CF084C512594F678007A93B4 /* LocationPickerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF084C502594F678007A93B4 /* LocationPickerViewModel.swift */; };
 		CF52B503258F960D009C186C /* LocationListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF52B502258F960D009C186C /* LocationListView.swift */; };
 		CF8828B32595062500CC30A3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF8828B22595062500CC30A3 /* AppDelegate.swift */; };
 		CF8828B52595062500CC30A3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF8828B42595062500CC30A3 /* SceneDelegate.swift */; };
@@ -34,6 +37,9 @@
 		CF8828BC2595062600CC30A3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CF8828BB2595062600CC30A3 /* Preview Assets.xcassets */; };
 		CF8828BF2595062600CC30A3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF8828BD2595062600CC30A3 /* LaunchScreen.storyboard */; };
 		CF8828CC25950C6A00CC30A3 /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF8828CB25950C6A00CC30A3 /* ActivityIndicator.swift */; };
+		CF8828D1259512E900CC30A3 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF8828D0259512E900CC30A3 /* MapView.swift */; };
+		CF8828D425951F8800CC30A3 /* LocationPickerBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF8828D325951F8800CC30A3 /* LocationPickerBuilder.swift */; };
+		CF8828D825968DC900CC30A3 /* CLLocationCoordinate2D+Equatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF8828D725968DC700CC30A3 /* CLLocationCoordinate2D+Equatable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,6 +63,9 @@
 		CF084C3525926018007A93B4 /* Units.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Units.swift; sourceTree = "<group>"; };
 		CF084C382594C0E3007A93B4 /* OSLog+categories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OSLog+categories.swift"; sourceTree = "<group>"; };
 		CF084C3D2594E235007A93B4 /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
+		CF084C442594EFB8007A93B4 /* LocationPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationPickerView.swift; sourceTree = "<group>"; };
+		CF084C482594F105007A93B4 /* LocationPickerView+State.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LocationPickerView+State.swift"; sourceTree = "<group>"; };
+		CF084C502594F678007A93B4 /* LocationPickerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationPickerViewModel.swift; sourceTree = "<group>"; };
 		CF52B502258F960D009C186C /* LocationListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationListView.swift; sourceTree = "<group>"; };
 		CF8828AF2595062500CC30A3 /* WeatherForecast.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherForecast.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF8828B22595062500CC30A3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -66,6 +75,9 @@
 		CF8828BE2595062600CC30A3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CF8828C02595062600CC30A3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CF8828CB25950C6A00CC30A3 /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
+		CF8828D0259512E900CC30A3 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		CF8828D325951F8800CC30A3 /* LocationPickerBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationPickerBuilder.swift; sourceTree = "<group>"; };
+		CF8828D725968DC700CC30A3 /* CLLocationCoordinate2D+Equatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CLLocationCoordinate2D+Equatable.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +134,7 @@
 			isa = PBXGroup;
 			children = (
 				CF084C13258FDFBA007A93B4 /* Publisher+assignNoRetain.swift */,
+				CF8828D725968DC700CC30A3 /* CLLocationCoordinate2D+Equatable.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -148,10 +161,22 @@
 		CF084C402594E994007A93B4 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				CF084C3D2594E235007A93B4 /* ErrorView.swift */,
 				CF8828CB25950C6A00CC30A3 /* ActivityIndicator.swift */,
+				CF084C3D2594E235007A93B4 /* ErrorView.swift */,
+				CF8828D0259512E900CC30A3 /* MapView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		CF084C432594EF9C007A93B4 /* LocationPicker */ = {
+			isa = PBXGroup;
+			children = (
+				CF8828D325951F8800CC30A3 /* LocationPickerBuilder.swift */,
+				CF084C442594EFB8007A93B4 /* LocationPickerView.swift */,
+				CF084C482594F105007A93B4 /* LocationPickerView+State.swift */,
+				CF084C502594F678007A93B4 /* LocationPickerViewModel.swift */,
+			);
+			path = LocationPicker;
 			sourceTree = "<group>";
 		};
 		CF52B501258F95AF009C186C /* LocationList */ = {
@@ -171,6 +196,7 @@
 			children = (
 				CF084BF1258F9D23007A93B4 /* LocationForecast */,
 				CF52B501258F95AF009C186C /* LocationList */,
+				CF084C432594EF9C007A93B4 /* LocationPicker */,
 				CF084C08258FC0BE007A93B4 /* MainScreen */,
 			);
 			path = Modules;
@@ -290,6 +316,7 @@
 			files = (
 				CF8828B32595062500CC30A3 /* AppDelegate.swift in Sources */,
 				CF8828B52595062500CC30A3 /* SceneDelegate.swift in Sources */,
+				CF8828D825968DC900CC30A3 /* CLLocationCoordinate2D+Equatable.swift in Sources */,
 				CF084BF3258F9D45007A93B4 /* LocationForecastView.swift in Sources */,
 				CF52B503258F960D009C186C /* LocationListView.swift in Sources */,
 				CF084C14258FDFBA007A93B4 /* Publisher+assignNoRetain.swift in Sources */,
@@ -298,15 +325,20 @@
 				CF084C26258FF613007A93B4 /* LocationForecastView+State.swift in Sources */,
 				CF084C0A258FC0CE007A93B4 /* MainScreenBuilder.swift in Sources */,
 				CF084BFA258FA09F007A93B4 /* Location.swift in Sources */,
+				CF084C492594F105007A93B4 /* LocationPickerView+State.swift in Sources */,
 				CF084C3125925379007A93B4 /* OpenWeatherClient+Weather.swift in Sources */,
 				CF084C29258FF6A0007A93B4 /* LocationForecastModel.swift in Sources */,
 				CF084BEF258F9913007A93B4 /* LocationListView+State.swift in Sources */,
+				CF084C512594F678007A93B4 /* LocationPickerViewModel.swift in Sources */,
 				CF084C21258FE63B007A93B4 /* OpenWeatherAPI.swift in Sources */,
 				CF084C04258FB63D007A93B4 /* LocationForecastBuilder.swift in Sources */,
+				CF084C452594EFB8007A93B4 /* LocationPickerView.swift in Sources */,
 				CF084C3625926018007A93B4 /* Units.swift in Sources */,
 				CF084BFD258FA2FB007A93B4 /* LocationListModel.swift in Sources */,
 				CF084BEC258F968E007A93B4 /* LocationListViewModel.swift in Sources */,
+				CF8828D1259512E900CC30A3 /* MapView.swift in Sources */,
 				CF084C1A258FE33B007A93B4 /* NetworkClient.swift in Sources */,
+				CF8828D425951F8800CC30A3 /* LocationPickerBuilder.swift in Sources */,
 				CF084C2E259251DA007A93B4 /* OpenWeatherClient.swift in Sources */,
 				CF084C00258FAE3E007A93B4 /* LocationListBuilder.swift in Sources */,
 				CF084C392594C0E3007A93B4 /* OSLog+categories.swift in Sources */,

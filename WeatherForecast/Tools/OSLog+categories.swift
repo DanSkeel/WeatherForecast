@@ -13,4 +13,5 @@ extension OSLog {
     private static var subsystem = Bundle.main.bundleIdentifier ?? "com.danskeel.weather_forecast"
 
     static let network = OSLog(subsystem: subsystem, category: "network")
+    static let coreLocation = OSLog(subsystem: subsystem, category: "core location")
 }

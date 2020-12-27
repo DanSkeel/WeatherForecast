@@ -15,7 +15,7 @@ final class LocationForecastModel {
     let api: OpenWeatherAPI
     
     var locationTitle: String {
-        return "\(location.coordinates.latitude), \(location.coordinates.longitude)"
+        return location.name
     }
     
     init(location: Location, api: OpenWeatherAPI) {

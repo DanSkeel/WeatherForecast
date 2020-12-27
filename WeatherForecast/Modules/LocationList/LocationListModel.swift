@@ -5,24 +5,22 @@
 //  Created by Danila Shikulin on 20.12.2020.
 //
 
+import CoreLocation
 import Foundation
 
 final class LocationListModel {
+        
+    @Published var locations: [Location] = []
     
-    static let backbaseCoordinates: Location.Coordinates = .init(longitude: 4.9277875388774905,
-                                                                 latitude: 52.37119422170798)
-    
-    @Published var locations: [Location]
-    
-    internal init(locations: [Location]) {
-        self.locations = locations
-    }
-
     func location(at index: Int) -> Location {
         locations[index]
     }
     
     func deleteLocations(for indexSet: IndexSet) {
         locations.remove(atOffsets: indexSet)
+    }
+    
+    func addLocation(_ location: Location) {
+        locations.insert(location, at: 0)
     }
 }

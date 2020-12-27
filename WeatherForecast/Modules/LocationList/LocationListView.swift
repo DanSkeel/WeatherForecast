@@ -14,9 +14,15 @@ struct LocationListView: View {
     
     var body: some View {
         
-        BodyView(state: viewModel.state,
-                 detailViewMaker: { AnyView(makeDetailView(at: $0)) },
-                 deleteItems: { viewModel.deleteItems(for: $0) })
+        BodyView(
+            state: viewModel.state,
+            detailViewMaker: { AnyView(makeDetailView(at: $0)) },
+            deleteItems: { viewModel.deleteItems(for: $0) },
+            addItem: viewModel.addItem
+        )
+        .sheet(item: $viewModel.locationPickerViewModel) {
+            viewModel.locationPickerBuiler.build(for: $0)
+        }
     }
 }
 
@@ -37,11 +43,13 @@ extension LocationListView {
         
         let detailViewMaker: (Int) -> AnyView
         let deleteItems: (IndexSet) -> Void
+        let addItem: () -> Void
         
         var body: some View {
             NavigationView {
                 content(for: state)
                     .navigationBarTitle(state.title)
+                    .navigationBarItems(trailing: addButton())
             }
         }
     }
@@ -67,6 +75,14 @@ private extension LocationListView.BodyView {
         }
         .listStyle(PlainListStyle())
     }
+    
+    func addButton() -> some View {
+        Button(action: addItem, label: {
+            Image(systemName: "plus")
+                .imageScale(.large)
+                .frame(width: 44, height: 44)
+        })
+    }
 }
 
 struct LocationListViewBody_Previews: PreviewProvider {
@@ -88,7 +104,8 @@ struct LocationListViewBody_Previews: PreviewProvider {
             LocationListView.BodyView(state: .init(title: "Weather",
                                                    items: .nonEmpty(items)),
                                       detailViewMaker: { _ in AnyView(EmptyView()) },
-                                      deleteItems: { items.remove(atOffsets: $0) })
+                                      deleteItems: { items.remove(atOffsets: $0) },
+                                      addItem: { items.insert(.init(id: UUID(), name: "London"), at: 0) })
         }
     }
 }

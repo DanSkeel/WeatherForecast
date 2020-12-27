@@ -6,17 +6,11 @@
 //
 
 import Foundation
+import CoreLocation
 
 struct Location: Identifiable {
     
     let id: AnyHashable = UUID()
-    let coordinates: Coordinates
-}
-
-extension Location {
-    
-    struct Coordinates {
-        var longitude: Double
-        var latitude: Double
-    }
+    let coordinates: CLLocationCoordinate2D
+    let name: String
 }
