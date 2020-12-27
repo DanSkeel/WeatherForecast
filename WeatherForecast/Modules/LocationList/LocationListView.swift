@@ -12,16 +12,26 @@ struct LocationListView: View {
     
     @ObservedObject var viewModel: LocationListViewModel
     
+    let helpView: AnyView
+    
     var body: some View {
-        
-        BodyView(
-            state: viewModel.state,
-            detailViewMaker: { AnyView(makeDetailView(at: $0)) },
-            deleteItems: { viewModel.deleteItems(for: $0) },
-            addItem: viewModel.addItem
-        )
-        .sheet(item: $viewModel.locationPickerViewModel) {
-            viewModel.locationPickerBuiler.build(for: $0)
+        ZStack {
+            BodyView(
+                state: viewModel.state,
+                detailViewMaker: { AnyView(makeDetailView(at: $0)) },
+                deleteItems: { viewModel.deleteItems(for: $0) },
+                addItemAction: viewModel.addItem,
+                helpAction: viewModel.helpAction
+            )
+            .sheet(isPresented: $viewModel.isShowingHelp, content: {
+                helpView
+            })
+            
+            // Seems like bug, but you can't use `sheet` twice on same view.
+            EmptyView()
+                .sheet(item: $viewModel.locationPickerViewModel) {
+                    viewModel.locationPickerBuiler.build(for: $0)
+                }
         }
     }
 }
@@ -43,13 +53,14 @@ extension LocationListView {
         
         let detailViewMaker: (Int) -> AnyView
         let deleteItems: (IndexSet) -> Void
-        let addItem: () -> Void
+        let addItemAction: () -> Void
+        let helpAction: () -> Void
         
         var body: some View {
             NavigationView {
                 content(for: state)
                     .navigationBarTitle(state.title)
-                    .navigationBarItems(trailing: addButton())
+                    .navigationBarItems(leading: helpButton(), trailing: addButton())
             }
         }
     }
@@ -77,8 +88,16 @@ private extension LocationListView.BodyView {
     }
     
     func addButton() -> some View {
-        Button(action: addItem, label: {
-            Image(systemName: "plus")
+        navigationBarButton(imageSystemName: "plus", action: addItemAction)
+    }
+    
+    func helpButton() -> some View {
+        navigationBarButton(imageSystemName: "questionmark.circle", action: helpAction)
+    }
+    
+    func navigationBarButton(imageSystemName: String, action: @escaping () -> Void) -> some View {
+        Button(action: action, label: {
+            Image(systemName: imageSystemName)
                 .imageScale(.large)
                 .frame(width: 44, height: 44)
         })
@@ -105,7 +124,8 @@ struct LocationListViewBody_Previews: PreviewProvider {
                                                    items: .nonEmpty(items)),
                                       detailViewMaker: { _ in AnyView(EmptyView()) },
                                       deleteItems: { items.remove(atOffsets: $0) },
-                                      addItem: { items.insert(.init(id: UUID(), name: "London"), at: 0) })
+                                      addItemAction: { items.insert(.init(id: UUID(), name: "London"), at: 0) },
+                                      helpAction: {})
         }
     }
 }

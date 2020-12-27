@@ -16,6 +16,7 @@ final class LocationListBuilder {
                                               detailViewBuilder: LocationForecastBuilder(),
                                               locationPickerBuiler: LocationPickerBuilder())
         
-        return LocationListView(viewModel: viewModel)
+        return LocationListView(viewModel: viewModel,
+                                helpView: AnyView(HelpBuilder().build()))
     }
 }

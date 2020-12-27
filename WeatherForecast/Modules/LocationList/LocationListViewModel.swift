@@ -17,6 +17,7 @@ final class LocationListViewModel: ObservableObject {
     let locationPickerBuiler: LocationPickerBuilder
     
     @Published var locationPickerViewModel: LocationPickerViewModel?
+    @Published var isShowingHelp: Bool = false
     @Published private(set) var state: ViewState
     
     private let model: LocationListModel
@@ -53,6 +54,10 @@ final class LocationListViewModel: ObservableObject {
             }
             self.locationPickerViewModel = nil
         })
+    }
+    
+    func helpAction() {
+        isShowingHelp = true
     }
 }
 
