@@ -70,9 +70,19 @@ private extension LocationListView.BodyView {
     
     func content(for state: State) -> some View {
         switch state.items {
+        
+        case let .empty(text):
+            return AnyView(emtpyList(text: text))
+            
         case let .nonEmpty(locations):
             return AnyView(list(for: locations))
         }
+    }
+    
+    func emtpyList(text: String) -> some View {
+        Text(text)
+            .font(.largeTitle)
+            .multilineTextAlignment(.center)
     }
     
     func list(for items: [State.Item]) -> some View {

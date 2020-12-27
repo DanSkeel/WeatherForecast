@@ -64,8 +64,16 @@ final class LocationListViewModel: ObservableObject {
 private extension LocationListViewModel {
     
     static func state(for locations: [Location]) -> ViewState {
-        .init(title: "Locations",
-              items: .nonEmpty(locations.map(item)))
+        
+        let items: ViewState.Items
+        
+        if locations.isEmpty {
+            items = .empty("Add a city to see forecast using +")
+        } else {
+            items = .nonEmpty(locations.map(item))
+        }
+        
+        return .init(title: "Locations", items: items)
     }
     
     static func item(for location: Location) -> ViewState.Item {

@@ -19,6 +19,7 @@ extension LocationListView.BodyView {
 extension LocationListView.BodyView.State {
     
     enum Items {
+        case empty(String)
         case nonEmpty([Item])
     }
     
