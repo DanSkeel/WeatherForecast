@@ -11,14 +11,14 @@ struct LocationForecastView: View {
     
     @ObservedObject var viewModel: LocationForecastViewModel
     
-    var body: Body {
-        Body(state: viewModel.state)
+    var body: BodyView {
+        BodyView(state: viewModel.state)
     }
 }
 
 extension LocationForecastView {
     
-    struct Body: View {
+    struct BodyView: View {
         
         let state: ViewState
         
@@ -31,7 +31,7 @@ extension LocationForecastView {
 
 // MARK: - Body private methods
 
-private extension LocationForecastView.Body {
+private extension LocationForecastView.BodyView {
     
     func content(for state: ViewState) -> some View {
         switch state.content {
@@ -71,7 +71,7 @@ private extension LocationForecastView.Body {
 
 // MARK: - Body subviews
 
-private extension LocationForecastView.Body {
+private extension LocationForecastView.BodyView {
     
     struct Scalar: View {
         
@@ -115,7 +115,7 @@ private extension LocationForecastView.Body {
 
 struct LocationForecastView_Previews: PreviewProvider {
     
-    typealias ViewState = LocationForecastView.Body.ViewState
+    typealias ViewState = LocationForecastView.BodyView.ViewState
 
     static var previews: some View {
         Group {
@@ -130,7 +130,7 @@ struct LocationForecastView_Previews: PreviewProvider {
     
     static func preview(for state: ViewState) -> some View {
         NavigationView {
-            LocationForecastView.Body(state: state)
+            LocationForecastView.BodyView(state: state)
         }
     }
     

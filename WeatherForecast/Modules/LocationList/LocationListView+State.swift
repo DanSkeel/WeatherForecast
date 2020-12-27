@@ -7,7 +7,7 @@
 
 import Foundation
 
-extension LocationListView.Body {
+extension LocationListView.BodyView {
     
     struct State {
         
@@ -16,7 +16,7 @@ extension LocationListView.Body {
     }
 }
 
-extension LocationListView.Body.State {
+extension LocationListView.BodyView.State {
     
     enum Items {
         case nonEmpty([Item])

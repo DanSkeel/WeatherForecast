@@ -12,11 +12,11 @@ struct LocationListView: View {
     
     @ObservedObject var viewModel: LocationListViewModel
     
-    var body: Body {
-                
-        Body(state: viewModel.state,
-             detailViewMaker: { AnyView(makeDetailView(at: $0)) },
-             deleteItems: { viewModel.deleteItems(for: $0) })
+    var body: some View {
+        
+        BodyView(state: viewModel.state,
+                 detailViewMaker: { AnyView(makeDetailView(at: $0)) },
+                 deleteItems: { viewModel.deleteItems(for: $0) })
     }
 }
 
@@ -31,7 +31,7 @@ private extension LocationListView {
 
 extension LocationListView {
     
-    struct Body: View {
+    struct BodyView: View {
         
         let state: State
         
@@ -47,7 +47,7 @@ extension LocationListView {
     }
 }
 
-private extension LocationListView.Body {
+private extension LocationListView.BodyView {
     
     func content(for state: State) -> some View {
         switch state.items {
@@ -71,7 +71,7 @@ private extension LocationListView.Body {
 
 struct LocationListViewBody_Previews: PreviewProvider {
     
-    typealias ViewState = LocationListView.Body.State
+    typealias ViewState = LocationListView.BodyView.State
     
     static var previews: some View {
         Preview(items: [
@@ -85,10 +85,10 @@ struct LocationListViewBody_Previews: PreviewProvider {
         @State var items: [ViewState.Item]
         
         var body: some View {
-            LocationListView.Body(state: .init(title: "Weather",
-                                               items: .nonEmpty(items)),
-                                  detailViewMaker: { _ in AnyView(EmptyView()) },
-                                  deleteItems: { items.remove(atOffsets: $0) })
+            LocationListView.BodyView(state: .init(title: "Weather",
+                                                   items: .nonEmpty(items)),
+                                      detailViewMaker: { _ in AnyView(EmptyView()) },
+                                      deleteItems: { items.remove(atOffsets: $0) })
         }
     }
 }

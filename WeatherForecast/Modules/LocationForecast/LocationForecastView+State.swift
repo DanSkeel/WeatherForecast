@@ -7,7 +7,7 @@
 
 import Foundation
 
-extension LocationForecastView.Body {
+extension LocationForecastView.BodyView {
     
     struct ViewState {
         var title: String
@@ -15,7 +15,7 @@ extension LocationForecastView.Body {
     }
 }
 
-extension LocationForecastView.Body.ViewState {
+extension LocationForecastView.BodyView.ViewState {
         
     enum Content {
         case loading
@@ -24,7 +24,7 @@ extension LocationForecastView.Body.ViewState {
     }
 }
 
-extension LocationForecastView.Body.ViewState.Content {
+extension LocationForecastView.BodyView.ViewState.Content {
 
     struct Model {
         let mainValue: String
@@ -32,7 +32,7 @@ extension LocationForecastView.Body.ViewState.Content {
     }
 }
 
-extension LocationForecastView.Body.ViewState.Content.Model {
+extension LocationForecastView.BodyView.ViewState.Content.Model {
     
     enum Measurement {
 

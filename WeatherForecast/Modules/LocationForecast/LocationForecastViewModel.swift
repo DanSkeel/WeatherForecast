@@ -10,7 +10,7 @@ import Combine
 
 final class LocationForecastViewModel: ObservableObject {
  
-    typealias ViewState = LocationForecastView.Body.ViewState
+    typealias ViewState = LocationForecastView.BodyView.ViewState
     typealias Forecast = LocationForecastModel.Forecast
     
     @Published private(set) var state: ViewState
